@@ -1,3 +1,4 @@
+//to compare with other String do not Enter Spaces one Bug remaining
 import java.util.*;
 public class Main {
 	private static Scanner sc=new Scanner(System.in);
@@ -40,19 +41,21 @@ public class Main {
 	
 	public static void addContact() {
 		System.out.print("Enter the Name :");
+		sc.nextLine();
 		String name =sc.nextLine();
 		sc.nextLine();
-		System.out.print("Enter the number");
+		System.out.print("Enter the number :");
 		String number=sc.nextLine();
 		Contacts contact=Contacts.createContacts(name, number);
 		if(mp.addNewContact(contact))
-			System.out.print("New contact added :" + name +",phone => "+number);
+			System.out.println("New contact added : Name is " + name +" and phone number is => "+number);
 		else 
 			System.out.println("can not add : "+ name +" is already on file");
 	}
 	
 	private static void updateContact() {
 		System.out.println("Enter existing name :");
+		sc.nextLine();
 		String oldName =sc.nextLine();
 		Contacts exitingContact= mp.queryContact(oldName);
 		if(exitingContact ==null) {
@@ -73,6 +76,7 @@ public class Main {
 	
 	private static void removeContact() {
 		System.out.println("Enter existing name :");
+		sc.nextLine();
 		String oldName =sc.nextLine();
 		Contacts exitingContact= mp.queryContact(oldName);
 		if(exitingContact ==null) {
@@ -89,6 +93,7 @@ public class Main {
 	
 	private static void queryContact() {
 		System.out.println("Enter existing name :");
+		sc.nextLine();
 		String oldName =sc.nextLine();
 		Contacts exitingContact= mp.queryContact(oldName);
 		if(exitingContact ==null) {
