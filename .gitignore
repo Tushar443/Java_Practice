@@ -2,3 +2,7 @@
 /hello.class
 /Hello.class
 /.metadata/
+*.class
+.gitignore
+bin
+*.project
